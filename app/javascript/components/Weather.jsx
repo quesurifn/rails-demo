@@ -2,7 +2,7 @@ import React from 'react'
 import Day from '../components/Day'
 import { parse } from 'upath';
 
-class Weather extends React.PureComponent {
+class Weather extends React.Component {
     constructor() {
         super();
         this.state = { 
@@ -12,7 +12,6 @@ class Weather extends React.PureComponent {
     }
 
     async componentDidMount() {
-        
        const unparsedData = await fetch('/api/');
        const parsedData = await unparsedData.json();
        console.log(parsedData)
@@ -23,10 +22,12 @@ class Weather extends React.PureComponent {
         const  { weatherData } = this.state;
         return (
             <div className="container">
-                {weatherData.map((e, idx) => {
-                    <Day className="cell" key={idx} day={e} />
-                })}
+                <h1>Phoenix 5 Day Forecast</h1>
+                <div className="flex-container">
+                    {weatherData.map((e, idx) => <Day className="cell" key={idx} day={e} /> )}
+                </div>  
             </div>
+                      
         )
     }
 }

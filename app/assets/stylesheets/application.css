@@ -14,20 +14,36 @@
  *= require_self
  */
 
-
- body {
-    background-color: #444548;
- }
-
- .container {
-    display: flex; 
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+ .flex-container {
+    display: flex;
     flex-wrap: wrap;
-    max-width: 80vw;
+    justify-content: center;
+    align-items: center;
   }
   
   .cell {
     flex-grow: 0.25;
-    border: 1px solid #fff;
+    border: 1px solid black;
+  }
+
+  .day {
+    width:250px;
+    display: block;
+    margin: 15px;
+    text-align: center;
+        
+  }
+
+  h1 {
+      text-align: center;
+  }
+
+  img {
+      width: 100px;
   }
   
   @media (max-width: 780px) {
